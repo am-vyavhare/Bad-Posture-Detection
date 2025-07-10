@@ -21,7 +21,7 @@ function App() {
     formData.append('video', videoFile);
 
     try {
-      const response = await fetch('http://localhost:5000/analyze', {
+      const response = await fetch('https://bad-posture-detection-1.onrender.com/analyze', {
         method: 'POST',
         body: formData,
       });

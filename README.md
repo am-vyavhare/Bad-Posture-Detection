@@ -9,8 +9,8 @@ This is a full-stack web application that detects bad posture from uploaded vide
 - Display frame-by-frame feedback on posture.
 
 ## Public Deployment Links
-- Frontend: [Netlify Link](https://your-netlify-link.netlify.app)
-- Backend: [Render Link](https://your-render-link.onrender.com)
+- Frontend: [Netlify Link](https://deluxe-kangaroo-89eb6e.netlify.app/)
+- Backend: [Render Link](https://bad-posture-detection-1.onrender.com/)
 
 ## Demo Video
 - [Demo Video Link](https://your-demo-video-link)
