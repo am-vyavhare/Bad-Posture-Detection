@@ -5,6 +5,7 @@ function App() {
   const [videoFile, setVideoFile] = useState(null);
   const [feedback, setFeedback] = useState([]);
   const [error, setError] = useState('');
+  const [darkMode, setDarkMode] = useState(false);
 
   const handleFileUpload = (event) => {
     setVideoFile(event.target.files[0]);
@@ -37,9 +38,18 @@ function App() {
     }
   };
 
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
   return (
-    <div className="app-container">
-      <h1 className="app-title">Bad Posture Detection App</h1>
+    <div className={`app-container ${darkMode ? 'dark-mode' : 'light-mode'}`}>
+      <header className="app-header">
+        <h1 className="app-title">Bad Posture Detection App</h1>
+        <button onClick={toggleDarkMode} className="mode-toggle-button">
+          {darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+        </button>
+      </header>
       <p className="app-description">
         Upload a video of yourself working or sitting, and this app will analyze your posture to detect slouching or desk shifting. Get instant feedback to improve your posture!
       </p>

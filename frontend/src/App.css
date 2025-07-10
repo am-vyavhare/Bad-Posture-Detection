@@ -2,78 +2,101 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Roboto', Arial, sans-serif;
-  background-color: #f4f4f9;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+:root {
+  --background-color: #f4f4f9;
+  --text-color: #333;
+  --button-bg-color: #007bff;
+  --button-text-color: #fff;
+}
+
+.dark-mode {
+  --background-color: #333;
+  --text-color: #f4f4f9; /* Ensure text is visible in dark mode */
+  --button-bg-color: #555;
+  --button-text-color: #f4f4f9;
 }
 
 .app-container {
   max-width: 800px;
-  margin: 40px auto;
+  margin: 20px auto;
   padding: 20px;
-  background-color: #ffffff;
+  background-color: var(--background-color);
   border: 1px solid #ddd;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .app-title {
-  text-align: center;
-  color: #333;
-  font-size: 32px;
+  font-size: 24px;
   font-weight: bold;
-  margin-bottom: 10px;
+  color: var(--text-color); /* Explicitly set text color */
+}
+
+.mode-toggle-button {
+  padding: 10px 20px;
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.mode-toggle-button:hover {
+  background-color: #0056b3;
 }
 
 .app-description {
   text-align: center;
-  color: #555;
-  font-size: 18px;
+  font-size: 16px;
   margin-bottom: 20px;
-  line-height: 1.5;
+  color: var(--text-color); /* Explicitly set text color */
 }
 
 .upload-section {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px;
-  margin-bottom: 30px;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 .file-input {
-  padding: 12px;
+  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  font-size: 16px;
-  transition: border-color 0.3s ease;
+  color: var(--text-color); /* Ensure file upload name text is visible */
+  background-color: var(--background-color);
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 .file-input:focus {
-  border-color: #007bff;
+  border-color: var(--button-bg-color);
   outline: none;
 }
 
 .submit-button {
-  padding: 12px 25px;
-  background-color: #007bff;
-  color: #fff;
+  padding: 10px 20px;
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .submit-button:hover {
   background-color: #0056b3;
-  transform: scale(1.05);
-}
-
-.error-message {
-  color: #d9534f;
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 16px;
 }
 
 .feedback-section {
@@ -82,38 +105,46 @@ body {
 
 .feedback-title {
   text-align: center;
-  color: #333;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
-  margin-bottom: 15px;
+  color: var(--text-color); /* Explicitly set text color */
 }
 
 .feedback-list {
   list-style: none;
   padding: 0;
-  margin: 0 auto;
-  max-width: 600px;
 }
 
 .feedback-item {
-  padding: 12px;
+  padding: 10px;
   border-bottom: 1px solid #ddd;
-  color: #555;
-  font-size: 16px;
-  background-color: #f9f9f9;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  transition: background-color 0.3s ease;
-}
-
-.feedback-item:hover {
-  background-color: #e6f7ff;
+  color: var(--text-color); /* Explicitly set text color */
 }
 
 .no-feedback {
   text-align: center;
-  color: #999;
-  font-size: 16px;
+  color: var(--text-color); /* Ensure text is visible in dark mode */
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    padding: 15px;
+  }
+
+  .app-title {
+    font-size: 20px;
+  }
+
+  .mode-toggle-button,
+  .submit-button {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+
+  .file-input {
+    font-size: 14px;
+    padding: 8px;
+  }
 }
 
 footer {
