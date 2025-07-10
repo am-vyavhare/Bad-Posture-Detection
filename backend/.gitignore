@@ -1,0 +1,19 @@
+# Python dependencies
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+
+# Virtual environment
+venv/
+env/
+
+# Temporary files
+.DS_Store
+temp/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
