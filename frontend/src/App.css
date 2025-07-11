@@ -126,6 +126,13 @@ body {
   color: var(--text-color); /* Ensure text is visible in dark mode */
 }
 
+.processing-message {
+  text-align: center;
+  font-size: 16px;
+  color: var(--text-color);
+  margin-top: 20px;
+}
+
 @media (max-width: 768px) {
   .app-container {
     padding: 15px;

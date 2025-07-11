@@ -5,6 +5,7 @@ function App() {
   const [videoFile, setVideoFile] = useState(null);
   const [feedback, setFeedback] = useState([]);
   const [error, setError] = useState('');
+  const [isProcessing, setIsProcessing] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
 
   const handleFileUpload = (event) => {
@@ -18,6 +19,7 @@ function App() {
       return;
     }
 
+    setIsProcessing(true); // Show processing indicator
     const formData = new FormData();
     formData.append('video', videoFile);
 
@@ -35,6 +37,8 @@ function App() {
       setFeedback(data.feedback);
     } catch (error) {
       setError(error.message);
+    } finally {
+      setIsProcessing(false); // Hide processing indicator
     }
   };
 
@@ -60,6 +64,7 @@ function App() {
         </button>
       </div>
       {error && <p className="error-message">{error}</p>}
+      {isProcessing && <p className="processing-message">Processing... Please wait.</p>}
       <div className="feedback-section">
         <h2 className="feedback-title">Feedback:</h2>
         {feedback.length > 0 ? (
